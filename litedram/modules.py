@@ -179,6 +179,17 @@ class AS4C32M16(SDRAMModule):
     speedgrade_timings = {"default": _SpeedgradeTimings(tRP=18, tRCD=18, tWR=12, tRFC=(None, 60), tFAW=None, tRAS=None)}
 
 
+class K4S561632J(SDRAMModule):
+    memtype = "SDR"
+    # geometry
+    nbanks = 4
+    nrows  = 8192
+    ncols  = 512
+    # timings
+    technology_timings = _TechnologyTimings(tREFI=64e6/8192, tWTR=(2, None), tCCD=(1, None), tRRD=None)
+    speedgrade_timings = {"default": _SpeedgradeTimings(tRP=20, tRCD=20, tWR=12, tRFC=(None, 65), tFAW=None, tRAS=None)}
+
+
 # DDR
 class MT46V32M16(SDRAMModule):
     memtype = "DDR"
